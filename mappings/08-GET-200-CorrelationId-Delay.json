@@ -1,0 +1,24 @@
+{
+    "id": "ae9e2a70-f72e-459b-9f0c-e763d9ea2910",
+    "priority": 10,
+    "request": {
+		"method": "GET",
+		"urlPath": "/example/eight",
+		"headers": {
+            "CorrelationId": {
+                "matchesJsonPath": "[?($.FixedDelay)]"
+            }
+        }
+	},
+	"response": {
+		"status": 200,
+		"fixedDelayMilliseconds": 3000,
+		"bodyFileName": "bigworld.json",
+		"headers": {
+			"Content-Type": "application/json"
+		}
+	},
+    "metadata": {
+        "comment": "this one returns success"
+    }
+}

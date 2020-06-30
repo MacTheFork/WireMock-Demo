@@ -1,0 +1,22 @@
+{
+    "id": "5e2fccec-2713-439e-8227-66f9d3da1253",
+    "request": {
+        "method": "POST",
+        "url": "/soap/request",
+        "bodyPatterns": [
+            {
+                "matchesXPath": "//*[local-name()='exchange_services']/*[local-name()='header']/*[local-name()='message_id']"
+            }
+        ]
+    },
+    "response": {
+        "transformers": [
+            "response-template"
+        ],
+        "status": 202,
+        "bodyFileName": "message_success.xml"
+    },
+    "metadata": {
+        "comment": "example of how to match on xml default namespace"
+    }
+}

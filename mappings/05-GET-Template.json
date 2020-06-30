@@ -1,0 +1,25 @@
+{
+	"priority": 10,
+	"request": {
+		"method": "GET",
+		"urlPath": "/template",
+		"queryParameters": {
+			"filterBy": {
+				"contains": ""
+			}
+		}
+	},
+	"response": {
+		"transformers": [
+			"response-template"
+		],
+		"status": 200,
+		"bodyFileName": "template.json",
+		"headers": {
+			"Content-Type": "application/json"
+		}
+	},
+	"metadata": {
+		"comments": "introducing handlebars in template response file - and query parameters - and handlebar helpers"
+	}
+}

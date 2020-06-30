@@ -1,0 +1,32 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body>
+        <v01:getAlphaPensionValuationResponse xmlns:v01="http://www.example.com/services/pension/schema/v01">
+            <getAlphaPensionValuationResponse>
+                <headerResponse>
+                    <responseCode>PENSIONAGREEMENT_GETPENSIONVALUATION</responseCode>
+                    <responseMessage>SUCCESS</responseMessage>
+                    <responseDetail>
+                        <responseCode>0</responseCode>
+                        <responseMessage></responseMessage>
+                    </responseDetail>
+                </headerResponse>
+                <pensionAgreement>
+                    <reference>ABC123</reference>
+                    <pensionValuation>
+                        <currentFundValue>123456.78</currentFundValue>
+                        <currentTransferValue>123456.78</currentTransferValue>
+                        <valuationDate>2020-04-01T00:00:00</valuationDate>
+                        <unpaidAdviceChargesAmount>321.00</unpaidAdviceChargesAmount>
+                        <valuation idRef="val1">
+                            <nonUnitisedValuation>
+                                <chargeAmount>123.45</chargeAmount>
+                                <finalBonusAmount>10000</finalBonusAmount>
+                                <transferValue>123456.78</transferValue>
+                            </nonUnitisedValuation>
+                        </valuation>
+                    </pensionValuation>
+                </pensionAgreement>
+            </getAlphaPensionValuationResponse>
+        </v01:getAlphaPensionValuationResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

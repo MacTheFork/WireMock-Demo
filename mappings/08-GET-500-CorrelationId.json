@@ -1,0 +1,19 @@
+{
+    "id": "4c94d704-ada7-4416-b058-4fc25b9fecd5",
+    "priority": 10,
+    "request": {
+        "method": "GET",
+        "urlPath": "/example/eight",
+        "headers": {
+            "CorrelationId": {
+                "matchesJsonPath": "[?($.HTTPStatusCode==500)]"
+            }
+        }
+    },
+    "response": {
+        "status": 500
+    },
+    "metadata": {
+        "comment": "example of how to simulate an error"
+    }
+}

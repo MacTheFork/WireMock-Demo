@@ -1,0 +1,16 @@
+{
+	"request": {
+		"method": "GET",
+		"urlPath": "/hello/bigworld"
+	},
+	"response": {
+		"status": 200,
+		"bodyFileName": "bigworld.json",
+		"headers": {
+			"Content-Type": "application/json"
+		}
+	},
+	"metadata":{
+		"comments":"request matching on URL path with response from file and added response header"
+	}
+}

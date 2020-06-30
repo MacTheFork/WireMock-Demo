@@ -1,0 +1,18 @@
+{
+    "id": "51936c85-31da-4836-baab-17fac1d00f48",
+    "priority": 20,
+    "request": {
+		"method": "GET",
+		"urlPath": "/example/eight"
+	},
+	"response": {
+		"status": 200,
+		"bodyFileName": "bigworld.json",
+		"headers": {
+			"Content-Type": "application/json"
+		}
+	},
+    "metadata": {
+        "comment": "this one returns success"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "id": "00fb9c48-ffbd-4788-ae49-5ffa43af4fa1",
+    "request": {
+        "method": "POST",
+        "url": "/soap/request",
+        "bodyPatterns": [
+            {
+                "matchesXPath": "//ns2:getValuation/getValuationRequest",
+                "xPathNamespaces": {
+                    "ns2": "http://www.example.com/services/pension/schema/v01"
+                }
+            }
+        ]
+    },
+    "response": {
+        "transformers": [
+            "response-template"
+        ],
+        "status": 200,
+        "headers": {
+            "Content-Type": "text/xml"
+        },
+        "bodyFileName": "{{soapXPath request.body '/getValuation/getValuationRequest/pension/reference/text()'}}.xml"
+    },
+    "metadata": {
+        "comment": "example of how to match on xml and use soapXPath handlebar helper for response"
+    }
+}

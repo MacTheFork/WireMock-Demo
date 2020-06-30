@@ -1,0 +1,1 @@
+<message>Message {{soapXPath request.body '/exchange_services/header/message_id/text()'}} has been successfully sent</message>

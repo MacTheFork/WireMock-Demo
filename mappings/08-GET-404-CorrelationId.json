@@ -1,0 +1,23 @@
+{
+    "id": "521bdb3b-8c08-44ef-9fcd-576a24be8bd2",
+    "priority": 10,
+    "request": {
+        "method": "GET",
+        "urlPath": "/example/eight",
+        "headers": {
+            "CorrelationId": {
+                "matchesJsonPath": "[?($.HTTPStatusCode==404)]"
+            }
+        }
+    },
+    "response": {
+        "status": 404,
+        "headers": {
+			"Content-Type": "application/json"
+		},
+        "bodyFileName": "NotFound.json"
+    },
+    "metadata": {
+        "comment": "example of how to simulate an error"
+    }
+}

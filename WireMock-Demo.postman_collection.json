@@ -1,0 +1,365 @@
+{
+	"info": {
+		"_postman_id": "2e90c310-c566-4ebe-a26a-597ef66b757e",
+		"name": "WireMock-Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Reset",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8080/__admin/mappings/reset",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"__admin",
+								"mappings",
+								"reset"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Requests List",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/__admin/requests",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"__admin",
+								"requests"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Requests Delete",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/__admin/requests",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"__admin",
+								"requests"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mappings",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/__admin/mappings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"__admin",
+								"mappings"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "01-GET-HelloWorld",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/hello/world",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hello",
+						"world"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "08-GET-Example-CorrelationId",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "CorrelationId",
+						"value": "{{$guid}}",
+						"type": "text"
+					},
+					{
+						"key": "CorrelationId",
+						"value": "{\"HTTPStatusCode\": 500}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "CorrelationId",
+						"value": "{\"HTTPStatusCode\": 404}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "CorrelationId",
+						"value": "{\"FixedDelay\": \"\"}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/example/eight",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"example",
+						"eight"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02-GET-HelloBigWorld",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/hello/bigworld",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hello",
+						"bigworld"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03-GET-Hello-Things",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/hello/:things",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hello",
+						":things"
+					],
+					"variable": [
+						{
+							"key": "things",
+							"value": "anything"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04-GET-Files",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/file/:things",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"file",
+						":things"
+					],
+					"variable": [
+						{
+							"key": "things",
+							"value": "thisFile"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05-GET-Template",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/template?filterBy=date&argle=fargle&argle=bargle",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"template"
+					],
+					"query": [
+						{
+							"key": "filterBy",
+							"value": "date"
+						},
+						{
+							"key": "offset",
+							"value": "14",
+							"disabled": true
+						},
+						{
+							"key": "argle",
+							"value": "fargle"
+						},
+						{
+							"key": "argle",
+							"value": "bargle"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "06-POST-XML",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n\t<soap:Body>\r\n\t\t<ns2:getValuation xmlns:ns2=\"http://www.example.com/services/pension/schema/v01\">\r\n\t\t\t<getValuationRequest>\r\n\t\t\t\t<pension>\r\n\t\t\t\t\t<reference>ABC123</reference>\r\n\t\t\t\t</pension>\r\n\t\t\t</getValuationRequest>\r\n\t\t</ns2:getValuation>\r\n\t</soap:Body>\r\n</soap:Envelope>"
+				},
+				"url": {
+					"raw": "localhost:8080/soap/request",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"soap",
+						"request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "07-POST-XML Default Namespace",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n\t<soap:Body>\r\n\t\t<exchange_services>\r\n\t\t\t<header>\r\n\t\t\t\t<message_id>{{$guid}}</message_id>\r\n\t\t\t</header>\r\n\t\t</exchange_services>\r\n\t</soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/soap/request",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"soap",
+						"request"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

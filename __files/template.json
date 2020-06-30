@@ -1,0 +1,11 @@
+{ {{#assign 'randomUUID'}}{{randomValue type='UUID'}}{{/assign}}
+    "id": "{{randomUUID}}",
+    "foo": "bar",
+    "today": "{{now}}",
+    "date": "{{now offset='7 days' format='yyyy-MM-dd'}}",
+    "filterBy": "{{request.requestLine.query.filterBy}}",
+    "argle": "{{request.requestLine.query.argle}}",
+    "argle1": "{{request.requestLine.query.argle.0}}",
+    "argle2": "{{request.requestLine.query.argle.1}}",
+    "sameAsId": "{{randomUUID}}"
+}

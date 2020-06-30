@@ -1,0 +1,13 @@
+{
+	"request": {
+		"method": "GET",
+		"urlPath": "/hello/world"
+	},
+	"response": {
+		"status": 200,
+		"body": "Hello World!"
+	},
+	"metadata":{
+		"comments":"request matching on URL path and response in-line"
+	}
+}
