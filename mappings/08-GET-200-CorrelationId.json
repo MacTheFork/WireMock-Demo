@@ -13,6 +13,7 @@
 		}
 	},
     "metadata": {
-        "comment": "this one returns success"
+        "name": "CorrelationId Success",
+        "description": "this one returns success"
     }
 }
