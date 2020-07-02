@@ -17,6 +17,7 @@
         "bodyFileName": "message_success.xml"
     },
     "metadata": {
-        "comment": "example of how to match on xml default namespace"
+		"name": "XML Default Namespace"
+        "description": "example of how to match on xml default namespace"
     }
 }

@@ -13,12 +13,13 @@
 	"response": {
 		"status": 200,
 		"fixedDelayMilliseconds": 3000,
-		"bodyFileName": "bigworld.json",
+		"bodyFileName": "sample.json",
 		"headers": {
 			"Content-Type": "application/json"
 		}
 	},
     "metadata": {
-        "comment": "this one returns success"
+		"name": "CorrelationId Delay",
+        "description": "this one returns success after a fixed delay"
     }
 }

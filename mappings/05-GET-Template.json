@@ -20,6 +20,7 @@
 		}
 	},
 	"metadata": {
-		"comments": "introducing handlebars in template response file - and query parameters - and handlebar helpers"
+		"name": "Templated Response",
+		"description": "introducing handlebars in template response file - and query parameters - and handlebar helpers"
 	}
 }

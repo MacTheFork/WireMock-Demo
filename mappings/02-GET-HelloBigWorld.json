@@ -11,6 +11,7 @@
 		}
 	},
 	"metadata":{
-		"comments":"request matching on URL path with response from file and added response header"
+		"name": "Hello Big World",
+		"description":"request matching on URL path with response from file and added response header"
 	}
 }

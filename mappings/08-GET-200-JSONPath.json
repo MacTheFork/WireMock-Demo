@@ -7,12 +7,13 @@
 	},
 	"response": {
 		"status": 200,
-		"bodyFileName": "bigworld.json",
+		"bodyFileName": "sample.json",
 		"headers": {
 			"Content-Type": "application/json"
 		}
 	},
     "metadata": {
-        "comment": "this one returns success"
+        "name": "CorrelationId Success",
+        "description": "this one returns success"
     }
 }

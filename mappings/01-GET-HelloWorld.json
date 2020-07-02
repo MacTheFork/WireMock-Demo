@@ -8,6 +8,7 @@
 		"body": "Hello World!"
 	},
 	"metadata":{
-		"comments":"request matching on URL path and response in-line"
+		"name": "Hello World",
+		"description":"request matching on URL path with in-line response"
 	}
 }

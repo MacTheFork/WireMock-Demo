@@ -23,6 +23,7 @@
         "bodyFileName": "{{soapXPath request.body '/getValuation/getValuationRequest/pension/reference/text()'}}.xml"
     },
     "metadata": {
-        "comment": "example of how to match on xml and use soapXPath handlebar helper for response"
+		"name": "XML Request Matcher"
+        "description": "example of how to match on xml and use soapXPath handlebar helper for response"
     }
 }

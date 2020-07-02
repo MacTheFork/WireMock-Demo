@@ -18,6 +18,7 @@
         "bodyFileName": "NotFound.json"
     },
     "metadata": {
-        "comment": "example of how to simulate an error"
+		"name": "CorrelationId 404",
+        "description": "example of how to simulate an error"
     }
 }

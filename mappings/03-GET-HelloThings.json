@@ -1,5 +1,5 @@
 {
-	"priority": 20,
+	"priority": 10,
 	"request": {
 		"method": "GET",
 		"urlPathPattern": "/hello/.+"
@@ -7,9 +7,10 @@
 	"response": {
 		"transformers": ["response-template"],
 		"status": 200,
-		"body": "Hello {{request.requestLine.pathSegments.[1]}}!"
+		"body": "Hello {{request.pathSegments.[1]}}!"
 	},
 	"metadata":{
-		"comments":"introducing priorities, regular expressions into request matching and response templating with handlebars into responses"
+		"name": "Hello Things",
+		"description":"introducing priorities, regular expressions into request matching and response templating with handlebars into responses"
 	}
 }

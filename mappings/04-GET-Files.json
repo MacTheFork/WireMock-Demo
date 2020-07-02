@@ -7,12 +7,13 @@
 	"response": {
 		"transformers": ["response-template"],
 		"status": 200,
-		"bodyFileName": "{{request.requestLine.pathSegments.[1]}}.xml",
+		"bodyFileName": "{{request.pathSegments.[1]}}.xml",
 		"headers": {
 			"Content-Type": "application/xml"
 		}
 	},
 	"metadata":{
-		"comments":"introducing handlebars into filename"
+		"name": "Files",
+		"description":"introducing handlebars into filename"
 	}
 }
