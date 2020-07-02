@@ -1,7 +1,7 @@
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
     <soapenv:Body>
-        <v01:getAlphaPensionValuationResponse xmlns:v01="http://www.example.com/services/pension/schema/v01">
-            <getAlphaPensionValuationResponse>
+        <v01:getPensionValuationResponse xmlns:v01="http://www.example.com/services/pension/schema/v01">
+            <getPensionValuationResponse>
                 <headerResponse>
                     <responseCode>PENSIONAGREEMENT_GETPENSIONVALUATION</responseCode>
                     <responseMessage>SUCCESS</responseMessage>
@@ -26,7 +26,7 @@
                         </valuation>
                     </pensionValuation>
                 </pensionAgreement>
-            </getAlphaPensionValuationResponse>
-        </v01:getAlphaPensionValuationResponse>
+            </getPensionValuationResponse>
+        </v01:getPensionValuationResponse>
     </soapenv:Body>
 </soapenv:Envelope>

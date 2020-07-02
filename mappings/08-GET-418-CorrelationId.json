@@ -1,0 +1,24 @@
+{
+    "id": "521bdb3b-8c08-44ef-9fcd-576a24be8bd2",
+    "priority": 10,
+    "request": {
+        "method": "GET",
+        "urlPath": "/example/eight",
+        "headers": {
+            "CorrelationId": {
+                "matchesJsonPath": "[?($.HTTPStatusCode==418)]"
+            }
+        }
+    },
+    "response": {
+        "status": 418,
+        "headers": {
+			"Content-Type": "coffee"
+		},
+        "bodyFileName": "ABC123.xml"
+    },
+    "metadata": {
+		"name": "CorrelationId 418",
+        "description": "example of how to simulate an event which never happens"
+    }
+}
