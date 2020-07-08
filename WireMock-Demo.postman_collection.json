@@ -149,49 +149,6 @@
 			"response": []
 		},
 		{
-			"name": "08-GET-Example-CorrelationId",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "CorrelationId",
-						"value": "{{$guid}}",
-						"type": "text"
-					},
-					{
-						"key": "CorrelationId",
-						"value": "{\"HTTPStatusCode\": 500}",
-						"type": "text",
-						"disabled": true
-					},
-					{
-						"key": "CorrelationId",
-						"value": "{\"HTTPStatusCode\": 404}",
-						"type": "text",
-						"disabled": true
-					},
-					{
-						"key": "CorrelationId",
-						"value": "{\"FixedDelay\": \"\"}",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "localhost:8080/example/eight",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"example",
-						"eight"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "02-GET-HelloBigWorld",
 			"request": {
 				"method": "GET",
@@ -253,7 +210,7 @@
 					"variable": [
 						{
 							"key": "things",
-							"value": "thisFile"
+							"value": "thisFile1"
 						}
 					]
 				}
@@ -355,6 +312,131 @@
 					"path": [
 						"soap",
 						"request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "08-GET-Example-CorrelationId",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "CorrelationId",
+						"value": "{{$guid}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "CorrelationId",
+						"value": "{\"HTTPStatusCode\": 500}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "CorrelationId",
+						"value": "{\"HTTPStatusCode\": 404}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "CorrelationId",
+						"value": "{\"FixedDelay\": \"\"}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "CorrelationId",
+						"value": "{\"HTTPStatusCode\": 418}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/example/eight",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"example",
+						"eight"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "09-GET-HTTPStatusCode",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "CorrelationId",
+						"type": "text",
+						"value": "{\"HTTPStatusCode\": 504}"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/example/nine",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"example",
+						"nine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10-GET-HTTPStatusCode-ErrorCode",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "CorrelationId",
+						"type": "text",
+						"value": "{\"HTTPStatusCode\": 500, \"ErrorCode\": 1000}"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/example/ten",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"example",
+						"ten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11-GET-HTTPStatusCode-ErrorCode with Default",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "errors 1000 and 2000 otherwise default",
+						"key": "CorrelationId",
+						"type": "text",
+						"value": "{\"HTTPStatusCode\": 500, \"ErrorCode\": 3000}"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/example/eleven",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"example",
+						"eleven"
 					]
 				}
 			},

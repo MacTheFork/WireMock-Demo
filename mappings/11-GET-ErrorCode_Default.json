@@ -1,0 +1,31 @@
+{
+    "id": "14e3e84f-1be8-4fb7-9389-6af4501d3f28",
+    "priority": 5,
+    "request": {
+        "method": "GET",
+        "urlPath": "/example/eleven",
+        "headers": {
+            "CorrelationId": {
+                "matchesJsonPath": "[?($.HTTPStatusCode)][?($.ErrorCode)]"
+            }
+        }
+    },
+    "response": {
+        "transformers": [
+            "response-template-extension"
+        ],
+        "transformerParameters": {
+            "status": "{{jsonPath request.headers.CorrelationId.first '$.HTTPStatusCode'}}",
+            "bodyFileName": "{{jsonPath request.headers.CorrelationId.first '$.HTTPStatusCode'}}_{{jsonPath request.headers.CorrelationId.first '$.ErrorCode'}}",
+            "fileDirectory": "ErrorCode",
+            "extension": "json"
+        },
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    },
+    "metadata": {
+        "name": "CorrelationId with structure",
+        "description": "example using extension so default file served if file not found"
+    }
+}

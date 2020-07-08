@@ -1,0 +1,24 @@
+{
+    "id": "7b5c0cfd-83a6-45cc-9f15-158d43f2b63e",
+    "priority": 5,
+    "request": {
+        "method": "GET",
+        "urlPath": "/example/nine",
+        "headers": {
+            "CorrelationId": {
+                "matchesJsonPath": "[?($.HTTPStatusCode)]"
+            }
+        }
+    },
+    "response": {
+		"transformers": ["response-template-extension"],
+		"transformerParameters": {
+			"status": "{{jsonPath request.headers.CorrelationId.first '$.HTTPStatusCode'}}"
+		},
+		"body": "You asked for HTTPStatusCode {{jsonPath request.headers.CorrelationId.first '$.HTTPStatusCode'}}"
+    },
+    "metadata": {
+		"name": "CorrelationId dynamic status",
+        "description": "example of how to use a different template extension"
+    }
+}
