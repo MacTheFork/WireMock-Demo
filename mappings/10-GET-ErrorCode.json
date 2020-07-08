@@ -1,0 +1,27 @@
+{
+    "id": "3e11da3b-1f8d-4cfe-b25a-df33f5b11542",
+    "priority": 5,
+    "request": {
+        "method": "GET",
+        "urlPath": "/example/ten",
+        "headers": {
+            "CorrelationId": {
+                "matchesJsonPath": "[?($.HTTPStatusCode==500)][?($.ErrorCode)]"
+            }
+        }
+    },
+    "response": {
+        "transformers": [
+            "response-template"
+        ],
+        "status": 500,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "bodyFileName": "/ErrorCode/{{jsonPath request.headers.CorrelationId.first '$.HTTPStatusCode'}}_{{jsonPath request.headers.CorrelationId.first '$.ErrorCode'}}.json"
+    },
+    "metadata": {
+        "name": "CorrelationId with structure",
+        "description": "example of how to avoid magic numbers"
+    }
+}
